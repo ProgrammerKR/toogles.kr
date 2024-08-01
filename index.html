@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Simple Toggles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .content {
+            margin-top: 60px; /* Adjust based on header height */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Adjust based on header height */
+        }
+
+        .toggle-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .toggle-label {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: var(--toggle-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Color Styles */
+        .toggle-red .slider {
+            --toggle-color: #e74c3c;
+        }
+
+        .toggle-blue .slider {
+            --toggle-color: #3498db;
+        }
+
+        .toggle-green .slider {
+            --toggle-color: #2ecc71;
+        }
+
+        .toggle-yellow .slider {
+            --toggle-color: #f1c40f;
+        }
+
+        .toggle-purple .slider {
+            --toggle-color: #9b59b6;
+        }
+
+        .toggle-orange .slider {
+            --toggle-color: #e67e22;
+        }
+
+        .toggle-teal .slider {
+            --toggle-color: #1abc9c;
+        }
+
+        .toggle-pink .slider {
+            --toggle-color: #fd79a8;
+        }
+
+        .toggle-cyan .slider {
+            --toggle-color: #00bcd4;
+        }
+
+        .toggle-brown .slider {
+            --toggle-color: #795548;
+        }
+
+        .toggle-gray .slider {
+            --toggle-color: #95a5a6;
+        }
+
+        .toggle-indigo .slider {
+            --toggle-color: #3f51b5;
+        }
+
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #aaa;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Colorful Simple Toggles
+    </header>
+    <div class="content">
+        <div class="toggle-container toggle-red">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Red</div>
+        </div>
+
+        <div class="toggle-container toggle-blue">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Blue</div>
+        </div>
+
+        <div class="toggle-container toggle-green">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Green</div>
+        </div>
+
+        <div class="toggle-container toggle-yellow">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Yellow</div>
+        </div>
+
+        <div class="toggle-container toggle-purple">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Purple</div>
+        </div>
+
+        <div class="toggle-container toggle-orange">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Orange</div>
+        </div>
+
+        <div class="toggle-container toggle-teal">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Teal</div>
+        </div>
+
+        <div class="toggle-container toggle-pink">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Pink</div>
+        </div>
+
+        <div class="toggle-container toggle-cyan">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Cyan</div>
+        </div>
+
+        <div class="toggle-container toggle-brown">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Brown</div>
+        </div>
+
+        <div class="toggle-container toggle-gray">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Gray</div>
+        </div>
+
+        <div class="toggle-container toggle-indigo">
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Indigo</div>
+        </div>
+    </div>
+    <div class="watermark">Created by Kanishk Raj</div>
+</body>
+</html>
